@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="header__title">
+    <h1>TeamSphere</h1>
+  </div>
+  <div class="menu">
+    <button class="menu" mat-button [matMenuTriggerFor]="menu">Notifications</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+
+  <button  class="menu" mat-button [matMenuTriggerFor]="menu">Messagerie</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <button  class="menu" mat-button [matMenuTriggerFor]="menu">Mon compte</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu> </div>
+
+</header>
