@@ -12,6 +12,7 @@ import {PostDetailComponent} from "./modules/post/components/post-detail/post-de
 import { HomeComponent } from './modules/home/home.component';
 import { WidgetComponent } from './modules/home/components/widget/widget.component';
 import { RegisterComponent } from './modules/auth/components/register/register.component';
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -21,17 +22,17 @@ import { RegisterComponent } from './modules/auth/components/register/register.c
     CreatePostComponent,
     PostDetailComponent,
     FooterComponent,
-    LoginComponent,
+
     HomeComponent,
     WidgetComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HeaderComponent,RegisterComponent
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HeaderComponent, RegisterComponent, MatInputModule ,LoginComponent,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

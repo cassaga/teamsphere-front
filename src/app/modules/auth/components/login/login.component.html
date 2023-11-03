@@ -4,6 +4,26 @@
   </div>
 
   <div  class="login-card">
+    <p>Inscription</p>
+    <div>
+      <div class="example-container">
+        <mat-form-field>
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput >
+          </mat-form-field>
+
+        <button routerLink="/home" mat-button color="primary">Connexion</button>
+        <button routerLink="/register" mat-button color="primary">Inscription</button>
+
+        <p>Vous avez oublié votre mot de passe? <a href="">Cliquez ici?</a> </p>
+      </div>
+    </div>
 
   </div>
 
