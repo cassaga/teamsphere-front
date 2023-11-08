@@ -6,6 +6,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatInputModule,
     MatSelectModule,
     MatIconModule,
+    RouterLink,
   ],
 })
 export class RegisterComponent {
@@ -30,6 +32,7 @@ export class RegisterComponent {
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
+
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
@@ -39,7 +42,8 @@ export class RegisterComponent {
   });
 
   fourthFormGroup = this._formBuilder.group({
-    fourthCtrl: ['', [Validators.required, Validators.minLength(6)]]});
+    fourthCtrl: ['', [Validators.required, Validators.minLength(6)]]
+  });
 
   fifthFormGroup = this._formBuilder.group({
     fifthCtrl: ['', Validators.required]
@@ -49,10 +53,21 @@ export class RegisterComponent {
     sixthCtrl: ['', Validators.required]
   });
 
-
-
   isLinear = false;
 
   constructor(private _formBuilder: FormBuilder) {}
 
+  onSubmit() {
+    const formData = {
+      prenom: this.firstFormGroup.get('firstCtrl')?.value,
+      nom: this.secondFormGroup.get('secondCtrl')?.value,
+      email: this.thirdFormGroup.get('thirdCtrl')?.value,
+      motDePasse: this.fourthFormGroup.get('fourthCtrl')?.value,
+      dateDeNaissance: this.fifthFormGroup.get('fifthCtrl')?.value,
+      genre: this.sixthFormGroup.get('sixthCtrl')?.value
+    };
+
+
+    console.log(formData);
+  }
 }

@@ -1,17 +1,15 @@
 <section class="register">
-
-
-
+  <div class="title">
+    <h1>TeamSphere</h1>
+  </div>
   <div class="register-card">
-
     <div class="title">
-
-    <p >Inscription</p></div>
+      <p>Inscription</p>
+    </div>
     <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <!-- Étape 1: Prénom -->
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-
-          <!--          // Prénom-->
           <ng-template matStepLabel>Prénom</ng-template>
           <mat-form-field>
             <mat-label>Prénom</mat-label>
@@ -23,8 +21,7 @@
         </form>
       </mat-step>
 
-
-      <!--          // nom -->
+      <!-- Étape 2: Nom -->
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Nom</ng-template>
@@ -38,8 +35,7 @@
         </form>
       </mat-step>
 
-      <!-- Email -->
-
+      <!-- Étape 3: Email -->
       <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup">
           <ng-template matStepLabel>Email</ng-template>
@@ -48,32 +44,31 @@
             <input type="email" matInput formControlName="thirdCtrl" placeholder="..." required>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Retour</button>
+            <button mat-button matStepperNext>Suivant</button>
           </div>
         </form>
       </mat-step>
 
-      <!-- Password -->
+      <!-- Étape 4: Mot de Passe -->
       <mat-step [stepControl]="fourthFormGroup">
         <form [formGroup]="fourthFormGroup">
           <ng-template matStepLabel>Mot de Passe</ng-template>
           <mat-form-field>
             <mat-label>Mot de passe</mat-label>
-
             <input matInput [type]="hide ? 'password' : 'text'" type="password" matInput formControlName="fourthCtrl" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Retour</button>
+            <button mat-button matStepperNext>Suivant</button>
           </div>
         </form>
       </mat-step>
 
-      <!-- Date of Birth -->
+      <!-- Étape 5: Date de Naissance -->
       <mat-step [stepControl]="fifthFormGroup">
         <form [formGroup]="fifthFormGroup">
           <ng-template matStepLabel>Date de Naisance</ng-template>
@@ -82,15 +77,13 @@
             <input type="date" matInput formControlName="fifthCtrl" required>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Retour</button>
+            <button mat-button matStepperNext>Suivant</button>
           </div>
         </form>
       </mat-step>
 
-
-
-      <!-- Gender -->
+      <!-- Étape 6: Genre -->
       <mat-step [stepControl]="sixthFormGroup">
         <form [formGroup]="sixthFormGroup">
           <ng-template matStepLabel>Genre</ng-template>
@@ -100,26 +93,27 @@
               <mat-option value="male">Homme</mat-option>
               <mat-option value="female">Femme</mat-option>
               <mat-option value="other">Autre</mat-option>
-              <mat-option value="other">Ne se prononce pas </mat-option>
+              <mat-option value="prefer-not-to-say">Ne se prononce pas</mat-option>
             </mat-select>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Retour</button>
+            <button mat-button matStepperNext>Suivant</button>
           </div>
         </form>
       </mat-step>
 
+      <!-- Étape finale: Confirmation -->
       <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-
-        <div class="final">
-          <button  class="button" mat-button matStepperPrevious>S'inscrire</button>
-          <button  class="button" mat-button (click)="stepper.reset()">Réinitialiser</button>
-        </div>
+        <ng-template matStepLabel>Confirmation</ng-template>
+        <form (submit)="onSubmit()">
+          <!-- Ajoutez d'autres champs de confirmation si nécessaire -->
+          <div class="final">
+            <button  (click)=" onSubmit()" routerLink="/home" type="submit" class="button" mat-button matStepperPrevious>S'inscrire</button>
+            <button class="button" mat-button (click)="stepper.reset()">Réinitialiser</button>
+          </div>
+        </form>
       </mat-step>
     </mat-stepper>
-
   </div>
-
 </section>

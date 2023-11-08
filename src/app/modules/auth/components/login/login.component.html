@@ -4,9 +4,10 @@
   </div>
 
   <div  class="login-card">
-    <p>Inscription</p>
+    <p class="inscription">Connexion</p>
     <div>
-      <div class="example-container">
+      <div class="input-container">
+        <div class="champs">
         <mat-form-field>
           <mat-label>Enter your email</mat-label>
           <input matInput placeholder="pat@example.com" [formControl]="email" required>
@@ -16,11 +17,11 @@
           <mat-form-field>
             <mat-label>Enter your password</mat-label>
             <input matInput >
-          </mat-form-field>
-
+          </mat-form-field></div>
+<div class="button-container">
         <button routerLink="/home" mat-button color="primary">Connexion</button>
         <button routerLink="/register" mat-button color="primary">Inscription</button>
-
+      </div>
         <p>Vous avez oublié votre mot de passe? <a href="">Cliquez ici?</a> </p>
       </div>
     </div>

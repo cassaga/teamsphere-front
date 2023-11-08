@@ -3,21 +3,23 @@
     <h1>TeamSphere</h1>
   </div>
   <div class="menu">
-    <button class="menu" mat-button [matMenuTriggerFor]="menu">Notifications</button>
-    <mat-menu #menu="matMenu">
+    <button class="menu" mat-button [matMenuTriggerFor]="notificationsMenu">Notifications</button>
+    <mat-menu #notificationsMenu="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
 
-  <button  class="menu" mat-button [matMenuTriggerFor]="menu">Messagerie</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  <button  class="menu" mat-button [matMenuTriggerFor]="menu">Mon compte</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu> </div>
+    <button class="menu"  mat-button [matMenuTriggerFor]="messagerieMenu">Messagerie</button>
+    <mat-menu #messagerieMenu="matMenu">
+      <button mat-menu-item>Messages</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
 
+    <button  class="menu" mat-button [matMenuTriggerFor]="compteMenu">Mon compte</button>
+    <mat-menu #compteMenu="matMenu">
+      <button mat-menu-item>Mes informations</button>
+      <button mat-menu-item>Préférences</button>
+      <button mat-menu-item>Me déconnecter</button>
+    </mat-menu>
+  </div>
 </header>

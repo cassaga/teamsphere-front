@@ -1,1 +1,27 @@
-<p>post-detail works!</p>
+<section>
+
+  @for (post of posts;track post.user) {
+    <ul>
+<div class="title">
+      <li> {{ post.user }}</li>
+      <li>{{ post.datePublication }}</li>
+</div>
+
+      <li class="posting">{{ post.postContent }}</li>
+
+    <div class="comment">
+<button>♡</button>
+      <input type="text" placeholder="Commenter..." >
+ <button>share</button>
+
+    </div>
+    </ul>
+  }
+
+
+  @empty {
+    <li> There are no items.</li>
+  }
+
+
+</section>

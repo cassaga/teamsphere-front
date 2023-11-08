@@ -8,16 +8,48 @@ align-items: center;
 
 
 .login-card{
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
   width: 270px;
-  background: #FFFFFF;
+  background: #fffcfc;
   border-radius: 10px;
   font-size: 15px;
+
+  .inscription{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    font-size: 30px;
+    color: #0D6EFD;
+    font-weight: bold;
+    font-family: Pacifico;
+    }
+
+  .champs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+
+
+
 }
 
 .title{
   font-weight: bold;
   margin-bottom: 20px;
+  align-self: center;
 
   h1{
   font-size: 60px;
