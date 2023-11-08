@@ -13,6 +13,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { WidgetComponent } from './modules/home/components/widget/widget.component';
 import { RegisterComponent } from './modules/auth/components/register/register.component';
 import {MatInputModule} from "@angular/material/input";
+import {CdkDrag} from "@angular/cdk/drag-drop";
 
 
 @NgModule({
@@ -24,15 +25,15 @@ import {MatInputModule} from "@angular/material/input";
     FooterComponent,
 
     HomeComponent,
-    WidgetComponent,
+
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HeaderComponent, RegisterComponent, MatInputModule ,LoginComponent,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HeaderComponent, RegisterComponent, MatInputModule, LoginComponent, CdkDrag, WidgetComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
