@@ -3,31 +3,30 @@
     <h1>TeamSphere</h1>
   </div>
 
-  <div  class="login-card">
+  <div class="login-card">
     <p class="inscription">Connexion</p>
     <div>
-      <div class="input-container">
-        <div class="champs">
-        <mat-form-field>
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="input-container">
+          <div class="champs">
+            <mat-form-field>
+              <mat-label>Entrez votre email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" name="email" required>
+              <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+            </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Enter your password</mat-label>
-            <input matInput >
-          </mat-form-field></div>
-<div class="button-container">
-        <button routerLink="/home" mat-button color="primary">Connexion</button>
-        <button routerLink="/register" mat-button color="primary">Inscription</button>
-      </div>
-        <p>Vous avez oublié votre mot de passe? <a href="">Cliquez ici?</a> </p>
-      </div>
+            <mat-form-field>
+              <mat-label>Mot de passe</mat-label>
+              <input matInput name="password" type="password" [(ngModel)]="password" required>
+            </mat-form-field>
+          </div>
+          <div class="button-container">
+            <button  routerLink="/home" class="button-primary" type="submit" mat-button color="primary">Connexion</button>
+            <button  class="button-primary" routerLink="/register" mat-button color="primary">Inscription</button>
+          </div>
+          <p class="forgot">Vous avez oublié votre mot de passe? <a  (click)="onForgotPasswordClick()" routerLink="/forgotten-password">Cliquez ici</a> </p>
+        </div>
+      </form>
     </div>
-
   </div>
-
-
-
 </div>

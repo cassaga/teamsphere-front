@@ -14,6 +14,8 @@ import { WidgetComponent } from './modules/home/components/widget/widget.compone
 import { RegisterComponent } from './modules/auth/components/register/register.component';
 import {MatInputModule} from "@angular/material/input";
 import {CdkDrag} from "@angular/cdk/drag-drop";
+import {CalendarModule, DateAdapter} from "angular-calendar";
+import {adapterFactory} from "angular-calendar/date-adapters/moment";
 
 
 @NgModule({
@@ -23,13 +25,16 @@ import {CdkDrag} from "@angular/cdk/drag-drop";
     CreatePostComponent,
     PostDetailComponent,
     FooterComponent,
-
     HomeComponent,
 
 
   ],
   imports: [
     BrowserModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HeaderComponent, RegisterComponent, MatInputModule, LoginComponent, CdkDrag, WidgetComponent,
