@@ -1,7 +1,8 @@
 <section>
- <p>POST LIST</p>
 
-  <a href="">Créer un post </a>
+
+<button class='button-primary'(click)="openModal()" >Créer un post</button>
+  <app-create-post *ngIf="modalOpen"  (closeModal)="closeModal()"></app-create-post>
 
   <app-post-detail></app-post-detail>
 </section>

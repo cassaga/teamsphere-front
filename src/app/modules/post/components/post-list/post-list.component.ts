@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, signal} from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -7,5 +7,16 @@ import { Component } from '@angular/core';
 })
 export class PostListComponent {
 
+
+  modalOpen = false;
+
+
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalOpen = false;
+  }
 
 }
